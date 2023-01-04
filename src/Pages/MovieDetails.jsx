@@ -8,18 +8,11 @@ import styled from "styled-components";
 
 const MovieDetails = () => {
     const { movieId } = useParams();
-    //  const [searchParams] = useSearchParams()
-    //  const mediaType = searchParams.get('mediaType')
     const [movie, setMovie] = useState(null);
     const location = useLocation();
     const [navPath] = useState(location.state?.from);
-
     const backLinkHref = navPath ?? "/";
-
-
     useEffect(() => {
-
-
         try {
             getMovieDetails(movieId).then(response => {
                 setMovie(response.data)
@@ -27,13 +20,7 @@ const MovieDetails = () => {
         } catch (error) {
             Notify.failure("OOOPS")
         }
-
-
     }, [movieId])
-
-
-
-
 
     if (movie) {
         const poster = movie.poster_path ? `https://image.tmdb.org/t/p/w300${movie.poster_path}` : defaultImage;
@@ -41,7 +28,6 @@ const MovieDetails = () => {
         return (
             <Box p='15px' display='grid' gridGap="10px">
                 <StyledBackLink to={backLinkHref}>Go back</StyledBackLink>
-
                 <Box display='grid' gridTemplateColumns="250px 1fr" maxWidth='600px' gridGap="10px" >
 
                     <img src={poster} alt="" />
@@ -79,10 +65,7 @@ const MovieDetails = () => {
 
 }
 
-
 export default MovieDetails;
-
-
 const StyledBackLink = styled(NavLink)`
        padding: 5px;
     width: 100px;
@@ -93,7 +76,7 @@ const StyledBackLink = styled(NavLink)`
     text-align:center;
     font-size: 18px;
     :hover{
-         background-color: #fc7d07;
+         background-color: #804030;
         color: #fff;
         box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
     }
