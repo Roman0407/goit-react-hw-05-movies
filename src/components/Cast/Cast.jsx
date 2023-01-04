@@ -30,7 +30,7 @@ const Cast = () => {
         return;
     }
     return (
-        <Box as={'ul'} display='grid' gridTemplateColumns='250px 250px 250px 250px' gridGap='10px' ml='auto' mr='auto'>
+        <Box as={'ul'} display='grid' gridTemplateColumns='150px 150px 150px 150px' gridGap='20px' ml='auto' mr='auto'>
             {cast.map(actor => {
                 const profile = actor.profile_path ? `https://image.tmdb.org/t/p/w300${actor.profile_path}` : defaultImage;
 

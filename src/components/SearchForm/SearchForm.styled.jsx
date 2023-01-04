@@ -22,7 +22,7 @@ export const StyledBtn = styled.button`
     text-align:center;
     font-size: 20px;
     :hover{
-         background-color: #00CCFF;
+         background-color: #50C878;
         color: #fff;
         box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
     }
